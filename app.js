@@ -6,6 +6,7 @@ document.addEventListener('keydown', function(event){
     position: 0
   })
   console.log('we now have', bullets)
+  playSound()
 })
 
 String.prototype.replaceAt = function(index, replacement) {
@@ -60,3 +61,9 @@ function loop(timestamp) {
 draw()
 var lastRender = 0
 window.requestAnimationFrame(loop)
+
+function playSound() {
+  const audio = document.querySelector('#shoot');
+  audio.currentTime = 0;
+  audio.play();
+}
